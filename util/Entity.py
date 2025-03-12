@@ -3,6 +3,8 @@
 from abc import ABC, abstractmethod
 import pygame.image
 from util.Const import ENTITY_HEALTH
+from util.Const import ENTITY_DAMAGE
+from util.Const import ENTITY_SCORE
 
 class Entity(ABC):
     def __init__(self, name:str, position: tuple):
@@ -11,6 +13,9 @@ class Entity(ABC):
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.speed = 0
         self.health = ENTITY_HEALTH[self.name]
+        self.damage = ENTITY_DAMAGE[self.name]
+        self.score = ENTITY_SCORE[self.name]
+        self.last_dmg = 'None'
 
     @abstractmethod
     def move(self, ):
