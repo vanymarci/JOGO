@@ -5,13 +5,14 @@ from pygame import Surface, Rect
 from pygame import font
 import util
 
-from util.Const import WIN_WIDTH, MENU_OPTION, COLOR_ORANGE, COLOR_WHITE, COLOR_YELLOW
+from util.Const import WIN_WIDTH, MENU_OPTION, COLOR_GREEN, COLOR_WHITE, COLOR_YELLOW
 
 class Menu:
     def __init__(self,window):
         self.window = window
         self.surf = pygame.image.load('./asset/MenuBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
+    
 
     def run(self, ):
         menu_option = 0
@@ -20,11 +21,11 @@ class Menu:
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
 
-            self.menu_text(text_size=50, text="Mountain", text_color=(
-            util.COLOR_ORANGE), text_center_pos=(((util.WIN_WIDTH / 2),70)))
+            self.menu_text(text_size=50, text="Halloween", text_color=(
+            util.COLOR_GREEN), text_center_pos=(((util.WIN_WIDTH / 2),70)))
 
-            self.menu_text(text_size=50, text="Shooter", text_color=(
-            util.COLOR_ORANGE),text_center_pos=(((util.WIN_WIDTH / 2),120)))
+            self.menu_text(text_size=50, text="Attack", text_color=(
+            util.COLOR_GREEN),text_center_pos=(((util.WIN_WIDTH / 2),120)))
             
             for i in range(len(util.MENU_OPTION)):
                 if i == menu_option:
